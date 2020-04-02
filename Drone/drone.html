@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flying Drone</title>
+    <link rel="stylesheet" href="drone.css">
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="banner">
+        <div id="drone-box">
+            <img src="./Drone_Img/drone.png" class="drone-pic">
+            <img src="./Drone_Img/drone_Puset.png" class="drone-pic-1">
+            <img src="./Drone_Img/drone-left.png" class="left-wings">
+            <img src="./Drone_Img/drone-right.png" class="right-wings">
+        </div>
+    </div>
+    <script>
+        $('#banner').mousemove(function(e){
+            var moveX = (e.pageX * -1/2)+300;
+            var moveY = (e.pageY * -1/3)+120;
+            $('#drone-box').css({
+                'transform' : 'translate3d('+moveX+'px,'+moveY+'px,0)'//0 is set for z-axis
+            });
+        });
+    </script>
+</body>
+</html>
